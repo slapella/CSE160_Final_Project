@@ -3,6 +3,8 @@
 # could not test it but i wanted to get it to you guys as soon as i could to 
 # work with and since the code works for you guys maybe you can test this and 
 # tell me how it works out. 
+# I think i have found a way to test it but it is on going. This is now what it 
+# is so far. 
 
 
 
@@ -21,12 +23,17 @@ def calc_r_squared_value(data_dict):
     for year in data_dict:
         data = data_dict[year]
         total_num_data = len(data)
-        avg_num = ave_temp_calc(data_dict)
-        avg_list = [avg_num]*total_number_data
-        total_data_list.append(data)
-        avg_data_list.append(avg_list)
+        avg_num_dict = ave_temp_calc(data_dict)
+        avg_num = avg_num_dict[year]
+        avg_list = [avg_num]*total_num_data
+        print(avg_list)
+        for i in range(len(data)):
+            total_data_list.append(data[i])
+        print(total_data_list)
+        for i in range(len(avg_list)):
+            avg_data_list.append(avg_list[i])
         
-        r2_final_score = r2_score(avg_data_list, total_data_list)
+    r2_final_score = r2_score(avg_data_list, total_data_list)
     
     print(r2_data)
     return r2_data
