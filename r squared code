@@ -1,0 +1,32 @@
+# Theoretically this should work to calculate the r squared value for a region. 
+# For some reason i could not get the original code to run on my computer so i 
+# could not test it but i wanted to get it to you guys as soon as i could to 
+# work with and since the code works for you guys maybe you can test this and 
+# tell me how it works out. 
+
+
+
+ 
+# you will need to import this for this to work
+from sklearn.metrics import r2_score
+
+def calc_r_squared_value(data_dict):
+    total_data_list = []
+    avg_data_list = []
+
+    # Data_dict is the equivalent of temp_dict in other code
+    # Likewise data is the equivalent of temp, etc. 
+    # Assuming the ave_temp_dict function is called ave_temp_calc(temp_dict)
+    # Also this works for pH as well as temp since the ave_temp_calc is general
+    for year in data_dict:
+        data = data_dict[year]
+        total_num_data = len(data)
+        avg_num = ave_temp_calc(data_dict)
+        avg_list = [avg_num]*total_number_data
+        total_data_list.append(data)
+        avg_data_list.append(avg_list)
+        
+        r2_final_score = r2_score(avg_data_list, total_data_list)
+    
+    print(r2_data)
+    return r2_data
