@@ -1,5 +1,7 @@
-# This works in as far as it will calculate the r squared value of the data assuming that
-# the average data is 
+# This should work in as far as it will calculate the r squared value of the data assuming that
+# the average of all of the data as one line accross the graph is a reasonable "Ideal" for the 
+# calculations. (You may have to graph it to see what i mean if you are confused, think the .1
+# line in Assignment 6 that we used the mean squared on.)
 
 
 
