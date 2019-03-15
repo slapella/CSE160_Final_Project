@@ -1,6 +1,8 @@
 # This works in as far as it will calculate the r squared value of the data assuming that
 # the average data is 
 
+
+
 # you will need to import this for this to work
 from sklearn.metrics import r2_score
 
@@ -36,6 +38,10 @@ def calc_r_squared_value(data_dict):
     total_avg_num = total_in_avg_data_list/len(avg_data_list)
     
     ideal_line_list = [total_avg_num]*len(avg_data_list)
+    
+    # This r2_score function is one that is within the sklearn.metrics library for
+    # Python that I access from 
+    # https://github.com/scikit-learn/scikit-learn/blob/7b136e9/sklearn/metrics/regression.py#L448
     
     r2_final_score = r2_score(total_data_list, ideal_line_list)
     
