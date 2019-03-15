@@ -1,14 +1,6 @@
-# Theoretically this should work to calculate the r squared value for a region. 
-# For some reason i could not get the original code to run on my computer so i 
-# could not test it but i wanted to get it to you guys as soon as i could to 
-# work with and since the code works for you guys maybe you can test this and 
-# tell me how it works out. 
-# I think i have found a way to test it but it is on going. This is now what it 
-# is so far. 
+# This works in as far as it will calculate the r squared value of the data assuming that
+# the average data is 
 
-
-
- 
 # you will need to import this for this to work
 from sklearn.metrics import r2_score
 
@@ -28,12 +20,24 @@ def calc_r_squared_value(data_dict):
         avg_list = [avg_num]*total_num_data
         print(avg_list)
         for i in range(len(data)):
-            total_data_list.append(data[i])
+            total_data_list.append(float(data[i]))
         print(total_data_list)
         for i in range(len(avg_list)):
             avg_data_list.append(avg_list[i])
-        
-    r2_final_score = r2_score(avg_data_list, total_data_list)
     
-    print(r2_data)
-    return r2_data
+    # The idea with the next bit of this code is to take that list of the average
+    # numbers i had made and make it one huge list of the overall average number 
+    # for the list as a whole. This should work as our "ideal" line.
+    
+    total_in_avg_data_list = 0
+    for num in avg_data_list:
+        total_in_avg_data_list += num
+    
+    total_avg_num = total_in_avg_data_list/len(avg_data_list)
+    
+    ideal_line_list = [total_avg_num]*len(avg_data_list)
+    
+    r2_final_score = r2_score(total_data_list, ideal_line_list)
+    
+    print(r2_final_score)
+    return r2_final_score
