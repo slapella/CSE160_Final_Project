@@ -20,10 +20,8 @@ def calc_r_squared_value(data_dict):
         avg_num_dict = ave_temp_calc(data_dict)
         avg_num = avg_num_dict[year]
         avg_list = [avg_num]*total_num_data
-        print(avg_list)
         for i in range(len(data)):
             total_data_list.append(float(data[i]))
-        print(total_data_list)
         for i in range(len(avg_list)):
             avg_data_list.append(avg_list[i])
     
